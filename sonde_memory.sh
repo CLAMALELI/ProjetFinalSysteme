@@ -1,8 +1,5 @@
 #!/bin/bash
 
 function memory(){
-  echo ""
-  echo " memory :"
-  free -h
-  echo ""
+  free | awk '/Mem:/ {printf("Utilisation RAM: %.2f%%\n", $3/$2 * 100)}'
 }
