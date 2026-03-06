@@ -1,6 +1,8 @@
 #!/bin/bash
 
 while true; do
-  free | awk '/Mem:/ {printf("Utilisation Memoire: %.2f%%\n", $3/$2 * 100)}'
-  sleep 2m
+    date=$(date '+%Y-%m-%d %H:%M:%S')
+    total=$(df -h / | awk 'NR==2 {print $5}')
+    echo "[$date] [DISQUE] Utilisation Globale: $total"
+    sleep 5m
 done
