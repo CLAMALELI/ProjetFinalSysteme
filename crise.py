@@ -16,7 +16,7 @@ config_defaut = {
     "smtp_server": "partage.univ-avignon.fr",
     "smtp_port": 465,
     "smtp_user": "matteo.jaubert@alumni.univ-avignon.fr",
-    "smtp_pass": "Nrfu3k00!!"
+    "smtp_pass": "mdp"
 }
 
 template_defaut = """
