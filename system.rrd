@@ -1,0 +1,10 @@
+#!/bin/bash
+# init_rrd.sh
+# à lancer une seule fois pour créer la base
+
+rrdtool create /home/matteojaubert/ProjetFinalSysteme/system.rrd \
+--step 300 \
+DS:cpu:GAUGE:600:0:100 \
+DS:ram:GAUGE:600:0:100 \
+DS:memory:GAUGE:600:0:100 \
+RRA:AVERAGE:0.5:1:288
