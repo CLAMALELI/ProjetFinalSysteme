@@ -1,9 +1,8 @@
 #!/bin/bash
-# init_rrd.sh
 
 rrdtool create /home/matteojaubert/ProjetFinalSysteme/system.rrd \
 --step 60 \
 DS:cpu:GAUGE:600:0:100 \
 DS:ram:GAUGE:600:0:100 \
 DS:memory:GAUGE:600:0:100 \
-RRA:AVERAGE:0.1:1:1440 //sauvegarde 24h de la base
+RRA:AVERAGE:0.1:1:1440 #sauvegarde 24h de la base
