@@ -1,7 +1,7 @@
 #!/bin/bash
 
 rrd="/home/matteojaubert/ProjetFinalSysteme/system.rrd"
-export_file="/home/matteojaubert/ProjetFinalSysteme/file.json"
+export_file="/home/matteojaubert/ProjetFinalSysteme/exportfile.json"
 
 /usr/bin/rrdtool xport --json --start -60m --step 60 \
     DEF:c=$rrd:cpu:AVERAGE \
