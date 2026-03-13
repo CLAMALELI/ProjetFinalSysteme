@@ -6,5 +6,5 @@ export_file="/home/matteojaubert/ProjetFinalSysteme/file.json"
 /usr/bin/rrdtool xport --json --start -60m --step 60 \
     DEF:c=$rrd:cpu:AVERAGE \
     DEF:r=$rrd:ram:AVERAGE \
-    DEF:d=$rrd:disque:AVERAGE \
-    XPORT:c:"CPU" XPORT:r:"RAM" XPORT:d:"DISQUE" > $export_file
+    DEF:d=$rrd:memory:AVERAGE \
+    XPORT:c:"CPU" XPORT:r:"RAM" XPORT:d:"memory" > $export_file
