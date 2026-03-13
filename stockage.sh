@@ -4,7 +4,7 @@
 PROJET="/home/matteojaubert/ProjetFinalSysteme"
 RRD="$PROJET/system.rrd"
 
-CPU=$(bash $PROJET/sonde_CPU.sh)
+CPU=$(bash $PROJET/sonde_cpu.sh)
 RAM=$(python3 $PROJET/sonde_RAM.py)
 MEMORY=$(bash $PROJET/sonde_memory.sh)
 
