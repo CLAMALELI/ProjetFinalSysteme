@@ -2,6 +2,7 @@ import requests
 import xml.etree.ElementTree as ET
 import json
 import os
+import subprocess
 
 url = "https://www.cert.ssi.gouv.fr/feed/"
 json_file = "derniere_alerte.json"
