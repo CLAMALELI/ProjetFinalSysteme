@@ -1,4 +1,4 @@
 #!/bin/bash
 
-total=$(free | awk '/Mem:/ {print int($3/$2 * 100)}'')
+total=$(df -h / | awk 'NR==2 {print $5}' | tr -d '%')
 echo "$total"
