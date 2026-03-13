@@ -6,7 +6,7 @@ from email.message import EmailMessage
 config_dir = "config"
 config_file = os.path.join(config_dir, "crisis_config.json")
 template_file = os.path.join(config_dir, "template_mail.html")
-data_file = "derniere_alerte.json"
+data_file = "exportfile.json"
 
 config_defaut = {
     "cpu_threshold": 80.0,
