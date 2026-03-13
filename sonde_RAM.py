@@ -1,4 +1,6 @@
 import psutil
 
-print(psutil.virtual_memory().available * 100 / psutil.virtual_memory().total)
+mem_info = psutil.virtual_memory().percent
+
+print(f"{mem_info}")
 
