@@ -41,3 +41,13 @@ if item is not None:
         json.dump(nouvelle_alerte, f, indent=4, ensure_ascii=False)
 
     print(f"Nouvelle alerte enregistrée : '{titre[:30]}...'")
+
+    # Envoi au moteur de stockage
+    subprocess.run([
+        "./stockage.sh",
+        "CERT",
+        titre,
+        date_pub,
+        link,
+        etat
+    ])
