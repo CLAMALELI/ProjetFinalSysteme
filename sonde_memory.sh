@@ -1,5 +1,4 @@
 #!/bin/bash
 
-date=$(date '+%Y-%m-%d %H:%M:%S')
-total=$(df -h / | awk 'NR==2 {print $5}' | tr -d '%')
+total=$(free | awk '/Mem:/ {print int($3/$2 * 100)}'')
 echo "$total"
