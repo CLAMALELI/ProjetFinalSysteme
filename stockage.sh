@@ -2,7 +2,7 @@
 
 # chemins
 PROJET="/home/matteojaubert/ProjetFinalSysteme"
-RRD="$PROJET/system.rrd"
+RRD="/home/matteojaubert/ProjetFinalSysteme/system.rrd"
 
 CPU=$(bash $PROJET/sonde_cpu.sh)
 RAM=$(python3 $PROJET/sonde_RAM.py)
