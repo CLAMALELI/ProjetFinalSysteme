@@ -8,7 +8,4 @@ CPU=$(ssh -i ~/.ssh/id_rsa $PC "bash ~/ProjetFinalSysteme/sonde_cpu.sh")
 RAM=$(ssh -i ~/.ssh/id_rsa $PC "bash ~/ProjetFinalSysteme/sonde_RAM.sh")
 MEMORY=$(ssh -i ~/.ssh/id_rsa $PC "bash ~/ProjetFinalSysteme/sonde_memory.sh")
 
-echo $CPU
-echo $RAM
-echo $MEMORY
 rrdtool update $RRD N:$CPU:$RAM:$MEMORY
