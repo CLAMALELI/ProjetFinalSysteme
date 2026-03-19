@@ -54,7 +54,7 @@ def get_data_from_json():
         data = json.load(f)
     
     row_data = data['data']
-    last_entry = row_data[-2]
+    last_entry = row_data[-1]
 
     if last_entry[0] is not None:
         return {
