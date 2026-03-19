@@ -7,4 +7,5 @@ export_file="/home/matteojaubert/ProjetFinalSysteme/exportfile.json"
     DEF:c=$rrd:cpu:AVERAGE \
     DEF:r=$rrd:ram:AVERAGE \
     DEF:d=$rrd:memory:AVERAGE \
-    XPORT:c:"CPU" XPORT:r:"RAM" XPORT:d:"memory" > $export_file
+    DEF:o=$rrd:origine:AVERAGE \
+    XPORT:c:"CPU" XPORT:r:"RAM" XPORT:d:"memory" XPORT:o:"origine"> $export_file
