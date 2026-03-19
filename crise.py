@@ -79,7 +79,7 @@ def generate_graph():
         f"DEF:origine={rrd_path}:origine:AVERAGE",
         "LINE1:cpu#FF0000:CPU",
         "LINE1:ram#00FF00:RAM",
-        "LINE1:disk#0000FF:DISK"
+        "LINE1:disk#0000FF:DISK",
         "LINE1:origine#FFFF00:ORIGINE"
     ]
     subprocess.run(cmd, check=True)
