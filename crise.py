@@ -60,6 +60,25 @@ def get_data_from_json():
         }
     return None
 
+def generate_graph():
+    graph_path = "graph.png"
+    rrd_path = "/home/matteojaubert/ProjetFinalSysteme/system.rrd"
+
+    cmd = [
+        "rrdtool", "graph", graph_path,
+        "--start", "-1h",
+        "--title", "Utilisation des ressources (1h)",
+        "--vertical-label", "%",
+        f"DEF:cpu={rrd_path}:cpu:AVERAGE",
+        f"DEF:ram={rrd_path}:ram:AVERAGE",
+        f"DEF:disk={rrd_path}:memory:AVERAGE",
+        "LINE1:cpu#FF0000:CPU",
+        "LINE1:ram#00FF00:RAM",
+        "LINE1:disk#0000FF:DISK"
+    ]
+    subprocess.run(cmd, check=True)
+    return graph_path
+
 def send_mail(stats):
     with open(config_file, 'r') as f:
         config = json.load(f)
@@ -71,6 +90,13 @@ def send_mail(stats):
     msg['Subject'] = "[AUTOMATIQUE] Crise : Alerte Ressources Serveur"
     msg['From'] = config["smtp_user"]
     msg['To'] = config["admin_email"]
+
+    graph_path = generate_graph()
+    with open(graph_path, 'rb') as img:
+        msg.add_attachment(img.read(),
+                           maintype='image',
+                           subtype='png',
+                           filename="graph.png")
 
     try:
         # Pour le port 465, on utilise SMTP_SSL directement
