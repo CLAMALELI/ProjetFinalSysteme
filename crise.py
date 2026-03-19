@@ -61,6 +61,7 @@ def get_data_from_json():
             "cpu": round(last_entry[0], 2),
             "ram": round(last_entry[1], 2),
             "disk": round(last_entry[2], 2),
+            "origine" : round(last_entry[3], 3),
         }
     return None
 
