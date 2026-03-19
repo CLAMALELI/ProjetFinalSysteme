@@ -52,18 +52,24 @@ def get_data_from_json():
         return None
     with open(data_file, 'r') as f:
         data = json.load(f)
-    
     row_data = data['data']
-    last_entry = row_data[-2]
-
-    if last_entry[0] is not None:
-        return {
-            "cpu": round(last_entry[0], 2),
-            "ram": round(last_entry[1], 2),
-            "disk": round(last_entry[2], 2),
-            "origine" : round(last_entry[3], 3),
-        }
-    return None
+    
+    # Chercher la dernière entrée avec des valeurs non-null
+    last_entry = None
+    for row in reversed(row_data):
+        if row[0] is not None:
+            last_entry = row
+            break
+    
+    if last_entry is None:
+        return None
+    
+    return {
+        "cpu": round(last_entry[0], 2),
+        "ram": round(last_entry[1], 2),
+        "disk": round(last_entry[2], 2),
+        "origine": round(last_entry[3], 3),
+    }
 
 def generate_graph():
     graph_path = "graph.png"
