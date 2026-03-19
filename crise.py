@@ -29,6 +29,8 @@ template_defaut = """
         <li><strong>RAM :</strong> {ram}%</li>
         <li><strong>Disque :</strong> {disk}%</li>
     </ul>
+    <h3>Graphique :</h3>
+    <img src="cid:graph">
 </body>
 </html>
 """
