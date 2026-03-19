@@ -75,9 +75,11 @@ def generate_graph():
         f"DEF:cpu={rrd_path}:cpu:AVERAGE",
         f"DEF:ram={rrd_path}:ram:AVERAGE",
         f"DEF:disk={rrd_path}:memory:AVERAGE",
+        f"DEF:origine={rrd_path}:origine:AVERAGE",
         "LINE1:cpu#FF0000:CPU",
         "LINE1:ram#00FF00:RAM",
         "LINE1:disk#0000FF:DISK"
+        "LINE1:origine#FFFF00:ORIGINE"
     ]
     subprocess.run(cmd, check=True)
     return graph_path
