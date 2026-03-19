@@ -5,4 +5,5 @@ rrdtool create /home/matteojaubert/ProjetFinalSysteme/system.rrd \
 DS:cpu:GAUGE:120:0:100 \
 DS:ram:GAUGE:120:0:100 \
 DS:memory:GAUGE:120:0:100 \
+DS:origine:GAUGE:120:0:2 \
 RRA:AVERAGE:0.1:1:1440 #sauvegarde 24h de la base
