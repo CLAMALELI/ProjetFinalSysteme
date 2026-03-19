@@ -29,7 +29,7 @@ template_defaut = """
         <li><strong>CPU :</strong> {cpu}%</li>
         <li><strong>RAM :</strong> {ram}%</li>
         <li><strong>Disque :</strong> {disk}%</li>
-        <li><strong>ORIGINE :</strong> {origine}%</li>
+        <li><strong>ORIGINE :</strong> {origine}</li>
     </ul>
     <h3>Graphique :</h3>
     <img src="cid:graph">
