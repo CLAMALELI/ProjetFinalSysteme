@@ -83,12 +83,17 @@ def send_mail(stats):
     msg['From'] = config["smtp_user"]
     msg['To'] = config["admin_email"]
 
-    graph_path = "graph0.png"
-    with open(graph_path, 'rb') as img:
-        msg.add_attachment(img.read(),
-                           maintype='image',
-                           subtype='png',
-                           filename="graph0.png")
+    graph_filename = "graph1.png" if stats["origine"] == "PC" else "graph0.png"
+    if os.path.exists(graph_filename):
+        with open(graph_path, 'rb') as img:
+            msg.add_attachment(
+                img.read(),
+                maintype='image',
+                subtype='png',
+                filename=graph_filename
+            )
+    else:
+        print(f"Attention : Le fichier {graph_filename} n'a pas été trouvé.")
 
     try:
         # Pour le port 465, on utilise SMTP_SSL directement
