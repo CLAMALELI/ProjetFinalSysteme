@@ -83,12 +83,12 @@ def send_mail(stats):
     msg['From'] = config["smtp_user"]
     msg['To'] = config["admin_email"]
 
-    graph_path = "graph.png"
+    graph_path = "graph0.png"
     with open(graph_path, 'rb') as img:
         msg.add_attachment(img.read(),
                            maintype='image',
                            subtype='png',
-                           filename="graph.png")
+                           filename="graph0.png")
 
     try:
         # Pour le port 465, on utilise SMTP_SSL directement
