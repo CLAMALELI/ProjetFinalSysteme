@@ -10,3 +10,4 @@ MEMORY=$(ssh -i ~/.ssh/id_rsa $PC "bash ~/ProjetFinalSysteme/sonde_memory.sh")
 ORIGINE=1  # 1 pour PC
 
 rrdtool update $RRD N:$CPU:$RAM:$MEMORY:$ORIGINE
+
