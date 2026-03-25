@@ -27,3 +27,5 @@ rrdtool graph $GRAPH_PATH \
   LINE1:ram#00FF00:"RAM" \
   LINE1:disk#0000FF:"DISK" \
   LINE1:origine#FFFF00:"ORIGINE"
+
+scp -i ~/.ssh/id_rsa graph1.png uapv2401103@pedago.univ-avignon.fr:~/public_html/monitoring/
