@@ -71,26 +71,6 @@ def get_data_from_json():
         "origine": "PC" if round(last_entry[3], 0) == 1 else "VM",
     }
 
-def generate_graph():
-    graph_path = "graph.png"
-    rrd_path = "/home/matteojaubert/ProjetFinalSysteme/system.rrd"
-    cmd = [
-        "rrdtool", "graph", graph_path,
-        "--start", "-1h",
-        "--title", "Utilisation des ressources (1h)",
-        "--vertical-label", "%",
-        f"DEF:cpu={rrd_path}:cpu:AVERAGE",
-        f"DEF:ram={rrd_path}:ram:AVERAGE",
-        f"DEF:disk={rrd_path}:memory:AVERAGE",
-        f"DEF:origine={rrd_path}:origine:AVERAGE",
-        "LINE1:cpu#FF0000:CPU",
-        "LINE1:ram#00FF00:RAM",
-        "LINE1:disk#0000FF:DISK",
-        "LINE1:origine#FFFF00:ORIGINE"
-    ]
-    subprocess.run(cmd, check=True)
-    return graph_path
-
 def send_mail(stats):
     with open(config_file, 'r') as f:
         config = json.load(f)
@@ -125,8 +105,6 @@ stats = get_data_from_json()
 if stats:
     with open(config_file, 'r') as f:
         config = json.load(f)
-        
-    generate_graph()
     
     is_crisis = (stats["cpu"] >= config["cpu_threshold"] or 
                  stats["ram"] >= config["ram_threshold"] or 
