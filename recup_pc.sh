@@ -29,3 +29,4 @@ rrdtool graph $GRAPH_PATH \
   LINE1:origine#FFFF00:"ORIGINE"
 
 scp -i ~/.ssh/id_rsa graph1.png uapv2401103@pedago.univ-avignon.fr:~/public_html/monitoring/
+ssh uapv2401103@pedago.univ-avignon.fr "chmod 644 ~/public_html/monitoring/*.png"
