@@ -27,5 +27,6 @@ rrdtool graph $GRAPH_PATH \
   LINE1:disk#0000FF:"DISK" \
   LINE1:origine#FFFF00:"ORIGINE"
 
-scp -i ~/.ssh/id_rsa graph0.png uapv2401103@pedago.univ-avignon.fr:~/public_html/monitoring/
+scp graph0.png uapv2401103@pedago.univ-avignon.fr:~/public_html/monitoring/
 ssh uapv2401103@pedago.univ-avignon.fr "chmod 644 ~/public_html/monitoring/*.png"
+
