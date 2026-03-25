@@ -44,7 +44,7 @@ def init_files():
         with open(config_file, 'w', encoding='utf-8') as f:
             json.dump(config_defaut, f, indent=4)
     if not os.path.exists(template_file):
-        with open(template_file, 'w', encoding='cp system.rrd system_pc.rrd utf-8') as f:
+        with open(template_file, 'w', encoding='utf-8') as f:
             f.write(template_defaut)
 
 def get_data_from_json():
@@ -85,7 +85,7 @@ def send_mail(stats):
 
     graph_filename = "graph1.png" if stats["origine"] == "PC" else "graph0.png"
     if os.path.exists(graph_filename):
-        with open(graph_path, 'rb') as img:
+        with open(graph_filename, 'rb') as img:
             msg.add_attachment(
                 img.read(),
                 maintype='image',
