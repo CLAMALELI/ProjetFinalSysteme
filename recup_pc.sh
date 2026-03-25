@@ -6,9 +6,7 @@ RRD="/home/matteojaubert/ProjetFinalSysteme/system_pc.rrd"
 PROJET="/home/matteojaubert/ProjetFinalSysteme"
 GRAPH_PATH="$PROJET/graph1.png"
 
-VAL_REELLE=$(ssh -i ~/.ssh/id_rsa $PC "bash ~/ProjetFinalSysteme/sonde_cpu.sh")
-CPU=$(echo "$VAL_REELLE * 1.5" | bc)
-
+CPU=$(ssh -i ~/.ssh/id_rsa $PC "bash ~/ProjetFinalSysteme/sonde_cpu.sh")
 RAM=$(ssh -i ~/.ssh/id_rsa $PC "bash ~/ProjetFinalSysteme/sonde_RAM.sh")
 MEMORY=$(ssh -i ~/.ssh/id_rsa $PC "bash ~/ProjetFinalSysteme/sonde_memory.sh")
 ORIGINE=1  # 1 pour PC
