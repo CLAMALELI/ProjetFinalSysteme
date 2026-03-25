@@ -32,7 +32,7 @@ template_defaut = """
         <li><strong>ORIGINE :</strong> {origine}</li>
     </ul>
     <h3>Graphique :</h3>
-    <img src="cid:graph">
+    <img src="cid:graph">graph_path = "graph1.png"
 </body>
 </html>
 """
@@ -74,7 +74,6 @@ def get_data_from_json():
 def generate_graph():
     graph_path = "graph.png"
     rrd_path = "/home/matteojaubert/ProjetFinalSysteme/system.rrd"
-
     cmd = [
         "rrdtool", "graph", graph_path,
         "--start", "-1h",
@@ -104,7 +103,7 @@ def send_mail(stats):
     msg['From'] = config["smtp_user"]
     msg['To'] = config["admin_email"]
 
-    graph_path = generate_graph()
+    graph_path = "graph.png"
     with open(graph_path, 'rb') as img:
         msg.add_attachment(img.read(),
                            maintype='image',
@@ -126,7 +125,9 @@ stats = get_data_from_json()
 if stats:
     with open(config_file, 'r') as f:
         config = json.load(f)
-
+        
+    generate_graph()
+    
     is_crisis = (stats["cpu"] >= config["cpu_threshold"] or 
                  stats["ram"] >= config["ram_threshold"] or 
                  stats["disk"] >= config["disk_threshold"])
