@@ -3,6 +3,7 @@
 # Adresse de ton PC
 PC="uapv2401103@pedago.univ-avignon.fr"
 RRD="/home/matteojaubert/ProjetFinalSysteme/system.rrd"
+GRAPH_PATH="$PROJET/graph1.png"
 
 CPU=$(ssh -i ~/.ssh/id_rsa $PC "bash ~/ProjetFinalSysteme/sonde_cpu.sh")
 RAM=$(ssh -i ~/.ssh/id_rsa $PC "bash ~/ProjetFinalSysteme/sonde_RAM.sh")
