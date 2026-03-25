@@ -14,7 +14,7 @@ rrdtool update $RRD N:$CPU:$RAM:$MEMORY:$ORIGINE
 
 rrdtool graph $GRAPH_PATH \
   --start -1h \
-  --title "Utilisation des ressources (1h)" \
+  --title "Utilisation des ressources VM (1h)" \
   --vertical-label "%" \
   --lower-limit 0 \
   --upper-limit 100 \
