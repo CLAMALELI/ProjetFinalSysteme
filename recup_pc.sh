@@ -2,7 +2,7 @@
 
 # Adresse de ton PC
 PC="uapv2401103@pedago.univ-avignon.fr"
-RRD="/home/matteojaubert/ProjetFinalSysteme/system.rrd"
+RRD="/home/matteojaubert/ProjetFinalSysteme/system_pc.rrd"
 PROJET="/home/matteojaubert/ProjetFinalSysteme"
 GRAPH_PATH="$PROJET/graph1.png"
 
