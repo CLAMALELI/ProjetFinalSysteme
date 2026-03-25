@@ -28,4 +28,4 @@ rrdtool graph $GRAPH_PATH \
   LINE1:disk#0000FF:"DISK" \
   LINE1:origine#FFFF00:"ORIGINE"
 
-scp graph1.png uapv2401103@pedago.univ-avignon.fr:/home/nas-wks01/users/uapv2401103/Donnees_itinerantes/public_html/monitoring/
+scp graph1.png uapv2401103@pedago.univ-avignon.fr:/home/nas-wks01/users/uapv2401103/Donnees_itinerantes_depuis_serveur_pedagogique/public_html/monitoring/
